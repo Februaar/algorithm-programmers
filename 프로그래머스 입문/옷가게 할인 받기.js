@@ -4,17 +4,19 @@
 
 function solution(price) {
   let discount = 0;
-  
-  if(price >= 500000) {
-      discount = 0.2;
+
+  if (price >= 500000) {
+    discount = 0.2;
   } else if (price >= 300000) {
-      discount = 0.1;
+    discount = 0.1;
   } else if (price >= 100000) {
-      discount = 0.05;
+    discount = 0.05;
   }
-  
+
+  // 할인이 적용된 가격을 계산
   const discountedPrice = price * (1 - discount);
-  const finalPrice = Math.floor(discountedPrice)
-  
-  return finalPrice;
+  // 소수점 이하를 버리고 정수로 변환
+  const totalPrice = Math.floor(discountedPrice);
+
+  return totalPrice;
 }
